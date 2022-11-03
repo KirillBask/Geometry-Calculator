@@ -68,7 +68,7 @@
             var triangle = new TriangleArea(a, b, c);
 
             // Act.
-            var isRight = triangle.IsIsoscelesTriangle;
+            var isRight = triangle.IsRightTriangle;
 
             // Assert. 
             return isRight;

@@ -2,12 +2,12 @@
 {
     public class TriangleArea: ITriangle
     {
-        public bool IsIsoscelesTriangle => _isoscelesTriangle.Value;
+        public bool IsRightTriangle => _isRightTriangle.Value;
         public double SideA { get; set; }
         public double SideB { get; set; }
         public double SideC { get; set; }
 
-        private readonly Lazy<bool> _isoscelesTriangle;
+        private readonly Lazy<bool> _isRightTriangle;
 
         private double _minSideValue = Constants.MinValue;
         private double _maxSideValue = Constants.MaxValue;
@@ -33,11 +33,11 @@
             SideB = sideB;
             SideC = sideC;
 
-            _isoscelesTriangle = new Lazy<bool>(IfIsoscelesTriangle);
+            _isRightTriangle = new Lazy<bool>(IfRightTriangle);
         }
 
 
-        private bool IfIsoscelesTriangle()
+        private bool IfRightTriangle()
         {
             double maxSideValue = SideA, bSide = SideB, cSide = SideC;
             if (bSide - maxSideValue > _minSideValue)
