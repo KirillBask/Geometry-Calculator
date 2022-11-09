@@ -3,34 +3,16 @@ CREATE TABLE Products (
     "Name" TEXT
 );
 
-INSERT INTO Products
-VALUES
-    (1, 'Harry Potter'),
-    (2, 'Milk'),
-    (3, 'Knife');
-
 CREATE TABLE Categories (
     Id INT PRIMARY KEY,
     "Name" TEXT
 );
-
-INSERT INTO Categories
-VALUES
-    (1, 'Book'),
-    (2, 'Food'),
-    (3, 'Gift');
 
 CREATE TABLE ProductCategories (
     ProductId INT FOREIGN KEY REFERENCES Products(Id),
     CategoryId INT FOREIGN KEY REFERENCES Categories(Id),
     PRIMARY KEY (ProductId, CategoryId)
 );
-
-INSERT INTO ProductCategories
-VALUES
-    (1, 1),
-    (1, 3),
-    (2, 2);
 
 SELECT P."Name", C."Name"
 FROM Products P
